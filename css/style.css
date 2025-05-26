@@ -1,0 +1,354 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  padding: 41px 0 0 0;
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+  color: #1a2233;
+  min-height: 100vh;
+}
+
+h1, .cards-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 auto 36px auto;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(90deg, #00b4d8 0%, #48cae4 100%);
+  border-radius: 18px;
+  padding: 22px 48px 18px 48px;
+  box-shadow: 0 6px 24px rgba(0,180,216,0.13);
+  text-shadow: 0 2px 12px #0077b633;
+  width: fit-content;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  z-index: 2;
+}
+
+header nav ul li {
+  margin: 20px 28px 0 0;
+}
+
+header nav ul li a,
+header nav ul li button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00b4d8 0%, #90e0ef 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,180,216,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+header nav ul li a:hover,
+header nav ul li button:hover {
+  background: linear-gradient(90deg, #48cae4 0%, #00b4d8 100%);
+  box-shadow: 0 6px 18px rgba(0,180,216,0.18);
+}
+
+table, #projects-table {
+  width: 98%;
+  margin: 36px auto 48px auto; /* Додаємо відступи зверху і знизу, вирівнюємо по центру */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,180,216,0.13);
+  background: #fff;
+  padding: 0 18px 18px 18px; /* Внутрішній відступ для таблиці */
+}
+
+th, td, #projects-table th, #projects-table td {
+  border-bottom: 1px solid #bde0fe;
+  padding: 18px 16px; /* Збільшені відступи у клітинках */
+  text-align: left;
+  vertical-align: middle;
+}
+
+th, #projects-table th {
+  background: #e0f7fa;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-top: 2px solid #00b4d8;
+  border-bottom: 2px solid #00b4d8;
+  color: #0077b6;
+}
+
+tr:nth-child(even), #projects-table tr:nth-child(even) {
+  background: #f1f8ff;
+}
+
+#projects-table tr:hover {
+  background: #caf0f8;
+}
+
+#projects-table a {
+  color: #00b4d8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+#projects-table th:first-child, #projects-table td:first-child {
+  text-align: center;
+  width: 50px;
+}
+
+#projects-table th, #projects-table td {
+  vertical-align: middle;
+}
+
+/* Стиль для блоку фільтрів */
+.filter-bar {
+  width: 80%;
+  display: flex;
+  gap: 36px;
+  margin-bottom: 28px;
+  align-items: center;
+  background: linear-gradient(90deg, #caf0f8 0%, #ade8f4 100%);
+  border-radius: 14px;
+  padding: 22px 28px;
+  box-shadow: 0 2px 14px rgba(0,180,216,0.08);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.filter-bar .back-btn {
+  margin-left: auto;
+  padding: 10px 26px;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,119,182,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.filter-bar .back-btn:hover {
+  background: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+  box-shadow: 0 6px 18px rgba(0,119,182,0.18);
+}
+
+.filter-bar label {
+  font-size: 1.08rem;
+  color: #0077b6;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#department-filter, #region-filter, #search-input,
+#department-filter-cards, #region-filter-cards, #search-input-cards {
+  font-size: 1.05rem;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #90e0ef;
+  background: #fff;
+  color: #0077b6;
+  font-weight: 500;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#department-filter:focus, #region-filter:focus, #search-input:focus,
+#department-filter-cards:focus, #region-filter-cards:focus, #search-input-cards:focus {
+  border: 2px solid #00b4d8;
+  outline: none;
+  background: #e0f7fa;
+}
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin: 36px auto;
+  max-width: 1600px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Картка: кнопки завжди внизу */
+.project-card {
+  flex: 1 1 calc(23% - 20px);
+  max-width: calc(23% - 20px);
+  background: linear-gradient(120deg, #f1f8ff 0%, #caf0f8 100%);
+  color: #0077b6;
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgba(0,180,216,0.11);
+  padding: 22px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 180px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(0,180,216,0.18);
+  background: linear-gradient(120deg, #ade8f4 0%, #f1f8ff 100%);
+}
+
+.card-number {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #00b4d8;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-department,
+.card-region {
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.card-links {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.card-links a {
+  display: inline-block;
+  padding: 7px 20px;
+  background: #00b4d8;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-links a:hover {
+  background: #0077b6;
+}
+
+.results-btn {
+  display: block;
+  margin: 0 auto 36px auto;
+  padding: 18px 44px;
+  background: linear-gradient(90deg, #00b4d8 0%, #48cae4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0,180,216,0.18);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1), letter-spacing 0.18s cubic-bezier(.4,2,.6,1);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #00b4d833;
+  text-align: center;
+  width: fit-content;
+  min-width: 260px;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-btn:hover, .results-btn:focus {
+  background: linear-gradient(90deg, #48cae4 0%, #00b4d8 100%);
+  box-shadow: 0 10px 36px rgba(0,180,216,0.28);
+  transform: translateY(-4px) scale(1.06) rotate(-1deg);
+  letter-spacing: 2px;
+}
+
+.results-btn::after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0.13) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.results-btn:hover::after, .results-btn:focus::after {
+  opacity: 1;
+  animation: shine 0.7s linear;
+}
+
+@keyframes shine {
+  0% { left: -60%; opacity: 0.2; }
+  60% { left: 60%; opacity: 0.4; }
+  100% { left: 120%; opacity: 0; }
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 1100px) {
+  .project-card {
+    flex-basis: calc(48% - 20px);
+    max-width: calc(48% - 20px);
+  }
+  .filter-bar {
+    width: 98vw;
+    min-width: 0;
+    padding: 12px 2vw;
+  }
+}
+@media (max-width: 700px) {
+  .project-card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  #cards-container {
+    gap: 14px;
+    padding: 0 4vw;
+  }
+  .filter-bar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 10px;
+    width: 100vw;
+  }
+  .filter-bar label {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  h1, .cards-title {
+    font-size: 1.3rem;
+    padding: 12px 8px;
+    border-radius: 10px;
+  }
+  #projects-table {
+    width: 100vw;
+    margin: 18px 0 24px 0;
+    border-radius: 8px;
+    padding: 0 2vw 10px 2vw;
+  }
+  #projects-table th, #projects-table td {
+    padding: 10px 4px;
+  }
+}

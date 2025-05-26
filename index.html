@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МАН2024</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+  <h1>Перелік наукових робіт МАН України 2024</h1>
+  <div class="filter-bar">
+    <label>
+      Відділення:
+      <select id="department-filter">
+        <option value="">Всі</option>
+      </select>
+    </label>
+    <label>
+      Область:
+      <select id="region-filter">
+        <option value="">Всі</option>
+      </select>
+    </label>
+    <label style="margin-left: auto;">
+      Пошук: <input type="text" id="search-input" style="width: 160px;">
+    </label>
+  </div>
+  <div class="table-limit-bar" style="display:flex;justify-content:center;gap:12px;margin-bottom:18px;">
+    <label for="table-limit" style="font-weight:600;">Кількість робіт:</label>
+    <select id="table-limit" style="padding:6px 16px;border-radius:8px;">
+      <option value="100">100</option>
+      <option value="1000">1000</option>
+      <option value="all">Всі</option>
+    </select>
+  </div>
+  <table id="projects-table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Назва</th>
+        <th>Відділення</th>
+        <th>Область</th>
+        <th>Ім'я та прізвище</th>
+        <th>Детальна інформація</th>
+        <th>Віртуальний постер</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
